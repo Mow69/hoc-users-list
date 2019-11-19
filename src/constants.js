@@ -1,4 +1,2 @@
-
-const url = `https://jsonplaceholder.typicode.com/users`;
-
-export default url;
+export const API_URL = "https://jsonplaceholder.typicode.com";
+export const USER_ENDPOINT = `${API_URL}/users`;

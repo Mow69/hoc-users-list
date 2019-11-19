@@ -1,6 +1,6 @@
-import React, { Component } from "react";
+import React, { Component } from 'react';
 
-class UserSearch extends Component {
+class Search extends Component {
   render = () => {
     const { handleChange, searchTerm } = this.props;
 
@@ -8,14 +8,16 @@ class UserSearch extends Component {
       <div className="row">
         <div className="col">
           <input
+            type="text"
             onChange={handleChange}
             value={searchTerm}
             placeholder="Recherche..."
+            className="form-control"
           />
         </div>
       </div>
     );
-  };
+  }
 }
 
-export default UserSearch;
+export default Search;
