@@ -20,6 +20,7 @@ class UserPage extends Component {
     }
 
     render = () => {
+
         if (this.state.user && this.state.user.name) {
             return (
                 <div className="row">

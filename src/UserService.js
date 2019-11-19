@@ -8,7 +8,7 @@ export const getUser = async id => {
 };
 
 export const getUsers = () => {
-  return Axios.get("https://jsonplaceholder.typicode.com/users").then(
+  return Axios.get(`${url}`).then(
       res => res.data
   );
 };
