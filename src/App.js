@@ -1,34 +1,25 @@
 import React, { Component } from "react";
+import { BrowserRouter as Router, Route, Switch } from "react-router-dom";
 import Nav from "./Nav";
-import UserList from "./UserList";
+import Users from "./Users";
+import UserPage from "./UserPage";
 
 class App extends Component {
-  constructor(props) {
-    super(props);
-    console.log("Construction du composant");
-    // Le constructeur est le seul endroit où on peut manipuler directement le state
-    this.state = {
-      users: []
-    };
-  }
-
-
   render = () => {
-    console.log("Dans le render avant return");
     return (
-      <>
-        <Nav />
-        <div className="container">
-          <div className="row">
-            <div className="col p-2">
-              <h1>Utilisateurs</h1>
-            </div>
+        <>
+          <Nav />
+          <div className="container">
+            <Router>
+              <div>
+                <Switch>
+                  <Route path="/user/:id" component={UserPage} />
+                  <Route path="/" component={Users} />
+                </Switch>
+              </div>
+            </Router>
           </div>
-          <table>
-            <UserList />
-          </table>
-        </div>
-      </>
+        </>
     );
   };
 }
